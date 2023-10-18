@@ -41,7 +41,13 @@ local effect = function(pos, amount, texture, min_size, max_size, radius, gravit
 	})
 end
 
-local S = mobs.intllib
+local S
+if minetest.get_modpath("intllib") then
+    S = intllib.Getter()
+else
+    S = function(s) return s end
+end
+
 
 -- Dragon Scale
 
